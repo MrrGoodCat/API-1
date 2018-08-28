@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-1", "API-1\API-1.csproj", "{667B1CCA-BB5D-46CF-AFC3-617C70BE7DAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceCountersCollector", "PerformanceCountersCollector\PerformanceCountersCollector.csproj", "{B08AC216-E5FA-48F2-97F6-61654E57998D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{667B1CCA-BB5D-46CF-AFC3-617C70BE7DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{667B1CCA-BB5D-46CF-AFC3-617C70BE7DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{667B1CCA-BB5D-46CF-AFC3-617C70BE7DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B08AC216-E5FA-48F2-97F6-61654E57998D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B08AC216-E5FA-48F2-97F6-61654E57998D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B08AC216-E5FA-48F2-97F6-61654E57998D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B08AC216-E5FA-48F2-97F6-61654E57998D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
