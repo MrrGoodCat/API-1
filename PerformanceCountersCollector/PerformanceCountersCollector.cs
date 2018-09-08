@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PerformanceCountersCollector.SerializationHelper;
 
 namespace PerformanceCountersCollector
 {
     using log4net;
+    using SentinelCoreAgent;
+    using SentinelCoreAgent.SerializationHelper;
+    using SentinelSNMPAgentStuff;
     using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
@@ -179,7 +181,7 @@ namespace PerformanceCountersCollector
                 // releasing all perf counters and updating internal hash tables
                 PerformanceCounter.CloseSharedResources();
             }
-
+            
             return new CollectorResult(resultedMetricTable);
         }
 

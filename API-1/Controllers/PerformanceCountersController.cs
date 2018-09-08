@@ -5,31 +5,51 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using PerformanceCountersCollector;
+using log4net;
+using System.Threading.Tasks;
+using System.Management;
+using Module;
 
 namespace API_1.Controllers
 {
     public class PerformanceCountersController : ApiController
     {
-        public IHttpActionResult Get([FromBody]string counterName)
+        PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        IPerformanceCounterCategoryWrapper performanceCounterCategoryWrapper = new PerformanceCounterCategoryWrapper();
+
+        [Route("api/CPU")]
+        public IHttpActionResult GetCpuUsage()
         {
-            string counterValue = "3.14";
-            var result = 0;
-
-            var performanceCounterCategories = PerformanceCounterCategory.GetCategories().FirstOrDefault(category => category.CategoryName == "Processor Information");
-            //var performanceCounters = performanceCounterCategories.GetCounters("_Total");
-
-            //result = performanceCounters.GetValue().ToString();
-
-            if (performanceCounterCategories.CounterExists("% Processor Time"))
+            Logger.InitLogger();
+            ILog log = Logger.Log;
+            XmlSerializator xml = new XmlSerializator();
+            xml.Serialize();
+            var result = performanceCounterCategoryWrapper.GetCpuUsage();
+            if (result == null)
             {
-                var performanceCounter = new PerformanceCounter(performanceCounterCategories.CategoryName, "% Processor Time", "_Total");
-                using (performanceCounter)
-                {
-                    result = (int)performanceCounter.Increment();
-                }
+                return NotFound();
             }
-
             return Ok(result);
         }
+
+        [Route ("api/RAM")]
+        public IHttpActionResult GetRamUsage()
+        {
+            PerformanceCounter performanceCounterRAM = new PerformanceCounter();
+
+            performanceCounterRAM.CounterName = "% Committed Bytes In Use";
+            performanceCounterRAM.CategoryName = "Memory";
+
+            return Ok(performanceCounterRAM.NextValue());
+        }
+
+        [Route("api/LogicalDisk/{label}")]
+        public IHttpActionResult GetDisksUtilization(string label)
+        {
+            PerformanceCounter performanceCounter = new PerformanceCounter("LogicalDisk", "% Free Space", label + ":");
+            return Ok(100 - performanceCounter.NextValue());
+        }
     }
+
 }

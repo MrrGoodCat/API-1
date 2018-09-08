@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="RTVA" OID="1.3.6.1.4.1.3167.4.1.8" StatusOID="1.3.6.1.4.1.3167.4.1.8.1">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.8.2" TableName="RTVA service status">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="ServiceStatus" ServiceName="NICE Real Time Content Analysis Service" />
+		</MetricTable>
+	</MetricTables>
+</Module>

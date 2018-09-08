@@ -102,5 +102,10 @@ namespace PerformanceCountersCollector
         /// The <see cref="CounterSample?"/>.
         /// </returns>
         CounterSample? GetPerfCounterNextSample(PerformanceCounterCategory counterCategory, string counterName, string instanceName, ILog logger);
+        /// <summary>
+        /// Get CPU usage based on Win32
+        /// </summary>
+        /// <returns></returns>
+        object GetCpuUsage();
     }
 }

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="playbackPortal" OID="1.3.6.1.4.1.3167.4.1.29" StatusOID="1.3.6.1.4.1.3167.4.1.29.1">
+  <MetricTables>
+    <MetricTable TableOid="1.3.6.1.4.1.3167.4.1.29.2" TableName="playback portal service status">
+      <Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_2"/>
+      <Metric MetricType="ServiceStatus" ServiceName="NICE ES Playback Portal Server" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE ES Force Delete Service" />
+    </MetricTable>
+  </MetricTables>
+</Module>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="RetentionHub" OID="1.3.6.1.4.1.3167.4.1.36" StatusOID="1.3.6.1.4.1.3167.4.1.36.1">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.36.2" TableName="NICE Policy Manager service status">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="1.4.4"/>
+			<Metric MetricType="ServiceStatus" ServiceName="NICE Policy Manager" />
+		</MetricTable>
+	</MetricTables>
+</Module>

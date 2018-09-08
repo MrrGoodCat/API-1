@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="VoiceBiometricServerExt" OID="1.3.6.1.4.1.3167.4.1.23" StatusOID="1.3.6.1.4.1.3167.4.1.23.1">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.23.2" TableName="VBS service statuses">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="ServiceStatus" ServiceName="NICE Content Analysis Service" />
+			<Metric MetricType="ServiceStatus" ServiceName="NICE Playback Administration" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Storage Streaming Service" />
+		</MetricTable>
+	</MetricTables>
+</Module>

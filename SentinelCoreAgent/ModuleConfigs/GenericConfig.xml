@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="Generic" OID="1.3.6.1.4.1.3167.4.1.0" StatusOID="1.3.6.1.4.1.3167.4.1.0.1" NotIntegrated = "true">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.0.2" TableName="AgentVersion">
+			<Metric MetricType="Default" DefaultName="AgentVersion" DefaultValue="1.4.6"/>
+		</MetricTable>
+	</MetricTables>
+</Module>

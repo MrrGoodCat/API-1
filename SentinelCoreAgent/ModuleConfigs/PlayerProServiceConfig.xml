@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="PlayerProService" OID="1.3.6.1.4.1.3167.4.1.34" StatusOID="1.3.6.1.4.1.3167.4.1.34.1">
+  <MetricTables>
+    <MetricTable TableOid="1.3.6.1.4.1.3167.4.1.34.2" TableName="NICE Player Pro perf counters">
+      <Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="1.4.2"/>
+      <Metric MetricType="PerfCounter" CategoryName="NICE Player Pro: Player Pro Counters" CounterName="Playback Success Rate" CounterInstanceName="default" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="NICE Player Pro: Player Pro Counters" CounterName="Concurrent Voice Only Playback" CounterInstanceName="default" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="NICE Player Pro: Player Pro Counters" CounterName="Concurrent Screen Playback" CounterInstanceName="default" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Process" CounterName="Private Bytes" CounterInstanceName="w3wp" CounterType="Simple"/>
+    </MetricTable>
+  </MetricTables>
+</Module>

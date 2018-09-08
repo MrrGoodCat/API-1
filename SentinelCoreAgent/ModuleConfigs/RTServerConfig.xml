@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="RTServer" OID="1.3.6.1.4.1.3167.4.1.10" StatusOID="1.3.6.1.4.1.3167.4.1.10.1">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.10.2" TableName="RTS service statuses">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="ServiceStatus" ServiceName="Apache ActiveMQ" />
+			<Metric MetricType="ServiceStatus" ServiceName="Apache Subversion" />
+			<Metric MetricType="ServiceStatus" ServiceName="Apache Tomcat" />
+			<Metric MetricType="ServiceStatus" ServiceName="IBM WAS" />
+			<Metric MetricType="ServiceStatus" ServiceName="RT Syslog" />
+			<Metric MetricType="ServiceStatus" ServiceName="RTServer ActiveMQ" />
+			<Metric MetricType="ServiceStatus" ServiceName="RTServer Apache" />
+			<Metric MetricType="ServiceStatus" ServiceName="RTServer Subversion Repository" />
+			<Metric MetricType="ServiceStatus" ServiceName="RTServer Tomcat" />
+			<Metric MetricType="ServiceStatus" ServiceName="RTServer Syslog" />
+			<Metric MetricType="ServiceStatus" ServiceName="RTServer_ActiveMQ" />
+			<Metric MetricType="ServiceStatus" ServiceName="RTServer WAS" />
+      <Metric MetricType="ServiceStatus" ServiceName="RTServer Elastic Search" />
+    </MetricTable>
+	</MetricTables>
+</Module>

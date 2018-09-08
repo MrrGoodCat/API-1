@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="TextCapture" OID="1.3.6.1.4.1.3167.4.1.1" StatusOID="1.3.6.1.4.1.3167.4.1.1.1">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.1.2" TableName="TextCapture perf counters"> <!--Metric info required for collecting-->
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="PerfCounter" CategoryName="TextCaptureServiceCategory" CounterName="SentMessages" CounterInstanceName="_total" CounterType="Average" CollectingInterval="300" Delta="20"/>
+			<Metric MetricType="PerfCounter" CategoryName="TextCaptureServiceCategory" CounterName="FilteredMessages" CounterInstanceName="_total" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="TextCaptureServiceCategory" CounterName="MaxNumOfMessages" CounterInstanceName="_total" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="TextCaptureServiceCategory" CounterName="NoMessages" CounterInstanceName="_total" CounterType="Simple"/>
+		</MetricTable>
+	</MetricTables>
+</Module>

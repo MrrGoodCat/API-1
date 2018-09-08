@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="MediaLibrary" OID="1.3.6.1.4.1.3167.4.1.12" StatusOID="1.3.6.1.4.1.3167.4.1.12.1" NotIntegrated = "true">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.12.2" TableName="MediaLibrary process status">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="ServiceStatus" ProcessName="lbl_prnt.exe" />
+		</MetricTable>
+	</MetricTables>
+</Module>

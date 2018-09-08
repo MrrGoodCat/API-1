@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="DataMart" OID="1.3.6.1.4.1.3167.4.1.15" StatusOID="1.3.6.1.4.1.3167.4.1.15.1" NotIntegrated = "true">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.15.2" TableName="data mart services statuses">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+
+      <Metric MetricType="PerfCounter" CategoryName="Memory" CounterName="Pages/Sec" CounterInstanceName="" CounterType="Average" CollectingInterval="60" Delta="5"/>
+      <Metric MetricType="PerfCounter" CategoryName="PhysicalDisk" CounterName="Avg. Disk sec/Transfer" CounterInstanceName="_Total" CounterType="Average" CollectingInterval="60" Delta="5"/>
+      <Metric MetricType="PerfCounter" CategoryName="PhysicalDisk" CounterName="Avg. Disk Queue Length" CounterInstanceName="_Total" CounterType="Average" CollectingInterval="60" Delta="5"/>
+      <!-- Counters per instance -->
+      <Metric MetricType="PerfCounter" CategoryName=".*:SQL Statistics" CounterName="Batch Requests/sec" CounterInstanceName="" CounterType="Average" CollectingInterval="60" Delta="5"/>
+      <Metric MetricType="PerfCounter" CategoryName=".*:Buffer Manager" CounterName="Buffer cache hit ratio" CounterInstanceName="" CounterType="Average" CollectingInterval="60" Delta="5"/>
+      <Metric MetricType="PerfCounter" CategoryName=".*:Buffer Manager" CounterName="Page life expectancy" CounterInstanceName="" CounterType="Average" CollectingInterval="60" Delta="5"/>
+      <Metric MetricType="PerfCounter" CategoryName=".*:Buffer Manager" CounterName="Page reads/sec" CounterInstanceName="" CounterType="Average" CollectingInterval="60" Delta="5"/>
+      <Metric MetricType="PerfCounter" CategoryName=".*:Buffer Manager" CounterName="Page writes/sec" CounterInstanceName="" CounterType="Average" CollectingInterval="60" Delta="5"/>
+
+      <Metric MetricType="ServiceStatus" ServiceName="SQL Server Analysis Services \(.*\)" />
+			<Metric MetricType="ServiceStatus" ServiceName="SQL Server \(.*\)" />
+		</MetricTable>
+	</MetricTables>
+</Module>

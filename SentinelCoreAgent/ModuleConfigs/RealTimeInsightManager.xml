@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="rtim" OID="1.3.6.1.4.1.3167.4.1.28" StatusOID="1.3.6.1.4.1.3167.4.1.28.1">
+  <MetricTables>
+    <MetricTable TableOid="1.3.6.1.4.1.3167.4.1.28.2" TableName="rtim service status">
+      <Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_1"/>
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Real Time Insight Manager" />
+    </MetricTable>
+  </MetricTables>
+</Module>

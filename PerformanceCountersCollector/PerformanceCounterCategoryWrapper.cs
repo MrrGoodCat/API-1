@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace PerformanceCountersCollector
     /// </summary>
     public class PerformanceCounterCategoryWrapper : IPerformanceCounterCategoryWrapper
     {
+
         /// <summary>
         /// The get categories.
         /// </summary>
@@ -100,6 +102,11 @@ namespace PerformanceCountersCollector
         {
             try
             {
+                if (counterCategory == null)
+                {
+                    logger.ErrorFormat("Performance counter category: '{0}' is not exist.", counterCategory);
+                    return null;
+                }
                 if (counterCategory.CounterExists(counterName))
                 {
                     var performanceCounter = new PerformanceCounter(counterCategory.CategoryName, counterName, instanceName);
@@ -143,6 +150,11 @@ namespace PerformanceCountersCollector
         {
             try
             {
+                if (counterCategory == null)
+                {
+                    logger.ErrorFormat("Performance counter category: '{0}' is not exist.", counterCategory);
+                    return null;
+                }
                 if (counterCategory.CounterExists(counterName))
                 {
                     var performanceCounter = new PerformanceCounter(counterCategory.CategoryName, counterName, instanceName);
@@ -164,5 +176,28 @@ namespace PerformanceCountersCollector
             return null;
         }
 
+        /// <summary>
+        /// Get CPU usage based on Win32
+        /// </summary>
+        /// <returns></returns>
+        public object GetCpuUsage()
+        {
+            //Get CPU usage values using a WMI query
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_PerfFormattedData_PerfOS_Processor");
+            var cpuTimes = searcher.Get().Cast<ManagementObject>().Select(mo => new
+            {
+                Name = mo["Name"],
+                Usage = mo["PercentProcessorTime"]
+            }
+            )
+            .ToList();
+
+            //The '_Total' value represents the average usage across all cores,
+            //and is the best representation of overall CPU usage
+            var query = cpuTimes.Where(x => x.Name.ToString() == "_Total").Select(x => x.Usage);
+            var cpuUsage = query.SingleOrDefault();
+
+            return cpuUsage;
+        }
     }
 }

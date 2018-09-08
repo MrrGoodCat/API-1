@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="CLSServer" OID="1.3.6.1.4.1.3167.4.1.19" StatusOID="1.3.6.1.4.1.3167.4.1.19.1" NotIntegrated = "true">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.19.2" TableName="IC perf counters">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Interactions Center: TRS" CounterName="# of Inserted Calls" CounterInstanceName="" CounterType="Simple" />
+			<Metric MetricType="PerfCounter" CategoryName="NICE Interactions Center: DBServer" CounterName="Insert Interaction Received / sec" CounterInstanceName="" CounterType="Average" CollectingInterval="300" Delta="20"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Interactions Center: CallServer" CounterName="# of pending commands" CounterInstanceName="" CounterType="Simple" />
+			<Metric MetricType="PerfCounter" CategoryName="NICE Interactions Center: DBServer" CounterName="Avg. Request BackLog Time (ms)" CounterInstanceName="" CounterType="Average" CollectingInterval="300" Delta="20"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Interactions Center: CallServer" CounterName="StartCall Commands Handling/sec" CounterInstanceName="" CounterType="Average" CollectingInterval="300" Delta="20"/>
+      <Metric MetricType="PerfCounter" CategoryName="NICE Interactions Center: RCMResourceUtilization" CounterName="ResourceUtilization_Counters" CounterInstanceName="resourceutilization_profile_id_*" CounterType="Simple" />
+		</MetricTable>
+	</MetricTables>
+</Module>

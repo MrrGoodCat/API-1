@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45D62DE6-0FB7-4D1F-AC64-2A9F5C802002}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SentinelCoreAgent</RootNamespace>
+    <AssemblyName>SentinelCoreAgent</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentSingleton.cs" />
+    <Compile Include="APIStatus.cs" />
+    <Compile Include="ConfigurationHandler.cs" />
+    <Compile Include="DefaultCollector.cs" />
+    <Compile Include="IConfigurationHandler.cs" />
+    <Compile Include="ILoggerHelper.cs" />
+    <Compile Include="IMetricCollector.cs" />
+    <Compile Include="IPingManager.cs" />
+    <Compile Include="LoggerHelper.cs" />
+    <Compile Include="MetricType.cs" />
+    <Compile Include="OidEntry.cs" />
+    <Compile Include="Pinger.cs" />
+    <Compile Include="PingManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistryStuff\RegistryHelper.cs" />
+    <Compile Include="RequestedOidWatcher.cs" />
+    <Compile Include="SentinelSNMPLogic.cs" />
+    <Compile Include="SerializationHelper\InfoStorage.cs" />
+    <Compile Include="SerializationHelper\MetricInfo.cs" />
+    <Compile Include="SerializationHelper\MetricTableCollection.cs" />
+    <Compile Include="SerializationHelper\MetricTableInfo.cs" />
+    <Compile Include="SerializationHelper\ModuleInfo.cs" />
+    <Compile Include="SerializationHelper\ModuleStatusInfo.cs" />
+    <Compile Include="SerializationHelper\TempModuleState.cs" />
+    <Compile Include="TrapSendServer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SentinelSNMPAgentStuff\SentinelSNMPAgentStuff.csproj">
+      <Project>{0846359d-6cf3-42d9-8312-5456dfd71a7c}</Project>
+      <Name>SentinelSNMPAgentStuff</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModuleConfigs\AgentsCenterModule.xml" />
+    <Content Include="ModuleConfigs\BSFModule.xml" />
+    <Content Include="ModuleConfigs\CLSServerConfig.xml" />
+    <Content Include="ModuleConfigs\ClusterConfig.xml" />
+    <Content Include="ModuleConfigs\CognosConfig.xml" />
+    <Content Include="ModuleConfigs\ComplianceAssuranceConfig.xml" />
+    <Content Include="ModuleConfigs\ConnectAPIConfig.xml" />
+    <Content Include="ModuleConfigs\ContentAnalysisModule.xml" />
+    <Content Include="ModuleConfigs\DataMartConfig.xml" />
+    <Content Include="ModuleConfigs\DistributedCacheConfig.xml" />
+    <Content Include="ModuleConfigs\EnrollmentService.xml" />
+    <Content Include="ModuleConfigs\GenericConfig.xml" />
+    <Content Include="ModuleConfigs\InsightAmplifierMiniBus.xml" />
+    <Content Include="ModuleConfigs\KeyStorageManagerModule.xml" />
+    <Content Include="ModuleConfigs\Logger.Indexer.xml" />
+    <Content Include="ModuleConfigs\Logger.IPCapture.xml" />
+    <Content Include="ModuleConfigs\Logger.Retriever.xml" />
+    <Content Include="ModuleConfigs\MediaAdapterConfig.xml" />
+    <Content Include="ModuleConfigs\MediaCollectionServerConfig.xml" />
+    <Content Include="ModuleConfigs\MediaLibraryConfig.xml" />
+    <Content Include="ModuleConfigs\MediaRetrievalServerConfig.xml" />
+    <Content Include="ModuleConfigs\MediaRetrievalServerModule.xml" />
+    <Content Include="ModuleConfigs\MPCMConfig.xml" />
+    <Content Include="ModuleConfigs\NMSConfig.xml" />
+    <Content Include="ModuleConfigs\NotificationServiceModule.xml" />
+    <Content Include="ModuleConfigs\PhysicalDbConfig.xml" />
+    <Content Include="ModuleConfigs\PlaybackPortalConfig.xml" />
+    <Content Include="ModuleConfigs\PlaybackStreamingServicesModule.xml" />
+    <Content Include="ModuleConfigs\PlaybackTelephonyServicesModule.xml" />
+    <Content Include="ModuleConfigs\PlayerProServiceConfig.xml" />
+    <Content Include="ModuleConfigs\RealTimeInsightManager.xml" />
+    <Content Include="ModuleConfigs\RecorderAdministrator.xml" />
+    <Content Include="ModuleConfigs\RedundancyManagerModule.xml" />
+    <Content Include="ModuleConfigs\RedundancyMonitor.xml" />
+    <Content Include="ModuleConfigs\ReporterConfig.xml" />
+    <Content Include="ModuleConfigs\RetentionHubConfig.xml" />
+    <Content Include="ModuleConfigs\RTADataManagerConfig.xml" />
+    <Content Include="ModuleConfigs\RTContentAnalysisModule.xml" />
+    <Content Include="ModuleConfigs\RTIConnectConfig.xml" />
+    <Content Include="ModuleConfigs\RTIConnectModule.xml" />
+    <Content Include="ModuleConfigs\RTServerConfig.xml" />
+    <Content Include="ModuleConfigs\RTVAConfig.xml" />
+    <Content Include="ModuleConfigs\RuleEngineModule.xml" />
+    <Content Include="ModuleConfigs\ScreenSenseServerConfig.xml" />
+    <Content Include="ModuleConfigs\SeamlessKeyEngineConfig.xml" />
+    <Content Include="ModuleConfigs\SplashTomcatConfig.xml" />
+    <Content Include="ModuleConfigs\SplashZookeeperConfig.xml" />
+    <Content Include="ModuleConfigs\StorageCenterConfig.xml" />
+    <Content Include="ModuleConfigs\SystemAdministratorConfig.xml" />
+    <Content Include="ModuleConfigs\SystemAdministratorModule.xml" />
+    <Content Include="ModuleConfigs\TextAnalysisModule.xml" />
+    <Content Include="ModuleConfigs\TextCaptureConfig.xml" />
+    <Content Include="ModuleConfigs\VoiceBeometricServerConfig.xml" />
+    <Content Include="ModuleConfigs\VoiceBiometricServerExtConfig.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="NMS" OID="1.3.6.1.4.1.3167.4.1.14" StatusOID="1.3.6.1.4.1.3167.4.1.14.1" NotIntegrated = "true">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.14.2" TableName="NMS services statuses">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="ServiceStatus" ServiceName="dvDataService" />
+			<Metric MetricType="ServiceStatus" ServiceName="dvEventService" />
+			<Metric MetricType="ServiceStatus" ServiceName="dvLicenseService" />
+			<Metric MetricType="ServiceStatus" ServiceName="dvMonitoringService" />
+			<Metric MetricType="ServiceStatus" ServiceName="dvPerformanceService" />
+			<Metric MetricType="ServiceStatus" ServiceName="dvSNMPTrapService" />
+			<Metric MetricType="ServiceStatus" ServiceName="dvSchedulerService" />
+      <Metric MetricType="ServiceStatus" ServiceName="Kratos Networks NeuralStar Data Manager" />
+      <Metric MetricType="ServiceStatus" ServiceName="Kratos Networks NeuralStar Event Processor" />
+      <Metric MetricType="ServiceStatus" ServiceName="Kratos Networks NeuralStar License Manager" />
+      <Metric MetricType="ServiceStatus" ServiceName="Kratos Networks NeuralStar Monitoring Service" />
+      <Metric MetricType="ServiceStatus" ServiceName="Kratos Networks NeuralStar Performance Manager" />
+      <Metric MetricType="ServiceStatus" ServiceName="Kratos Networks NeuralStar SNMP Trap Listener" />
+      <Metric MetricType="ServiceStatus" ServiceName="Kratos Networks NeuralStar Job Scheduler" />
+    </MetricTable>
+	</MetricTables>
+</Module>

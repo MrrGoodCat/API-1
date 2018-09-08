@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="StorageCenter" OID="1.3.6.1.4.1.3167.4.1.18" StatusOID="1.3.6.1.4.1.3167.4.1.18.1" NotIntegrated = "true">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.18.2" TableName="StorageCenter perf counter">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: Storage Center" CounterName="# of concurrent playbacks" CounterInstanceName="" CounterType="Simple"/>
+		</MetricTable>
+	</MetricTables>
+</Module>

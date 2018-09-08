@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="System Administrator" OID="1.3.6.1.4.1.3167.4.1.22" StatusOID="1.3.6.1.4.1.3167.4.1.22.1">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.22.2" TableName="Sys admin service status">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="ServiceStatus" ServiceName="Nice NBA" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice SystemAdministrator" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Audit Trail Service" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Coaching Server" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Evaluation Forms Server" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice FTF Query Server" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Investigations Server" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice IP Phone Applications" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Monitor Server" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice MyUniverse" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Playback Administration" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Playback Streaming" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Retention Service" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Rule Engine" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice RulesManager Service" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice AA Search Controller" />
+			<Metric MetricType="ServiceStatus" ServiceName="Nice Notification Service" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Playback Portal AppServer Proxy Service" />
+
+      <Metric MetricType="ServiceStatus" ServiceName="NICE ESBDataResolver" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Enterprise Service Bus" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Search Tomcat" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Search Zookeeper" />
+      <Metric MetricType="ServiceStatus" ServiceName="ActiveMQ" />
+      <Metric MetricType="ServiceStatus" ServiceName="IBM Integration Bus Component COREIN" />
+      <Metric MetricType="ServiceStatus" ServiceName="IBM WebSphere MQ (NICEMQ)" />
+      <Metric MetricType="ServiceStatus" ServiceName="IBM Integration Bus 10.0.0.3 Server MasterService" />
+      
+    </MetricTable>
+	</MetricTables>
+</Module>

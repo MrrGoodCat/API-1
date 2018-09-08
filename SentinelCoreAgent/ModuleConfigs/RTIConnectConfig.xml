@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="RTIConnect" OID="1.3.6.1.4.1.3167.4.1.21" StatusOID="1.3.6.1.4.1.3167.4.1.21.1" NotIntegrated = "true">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.21.2" TableName="RTIConnect perf counters">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect" CounterName="Total # of received Unidentified Clients." CounterInstanceName="niceapplications.rticonnect.host" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect" CounterName="# of pending ApplicationUsage items" CounterInstanceName="niceapplications.rticonnect.host" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect" CounterName="# of pending Notifications" CounterInstanceName="niceapplications.rticonnect.host" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="ITIC Server Load Index" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="Total # of registered Agents" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="The # of RTA requests per second" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="The # of Tagging operations per second" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="The # of Pause recording requests per second" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="The # of Resume recording requests per second" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="The # of Desktop Triggering requests per second" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="The # of RTSA requests per second" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="The # of Recording &amp; CTI events recevied per second" CounterInstanceName="" CounterType="Simple"/>	  
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="Total # of authentication requests received" CounterInstanceName="" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Perform: RTI Connect - Custom" CounterName="Total # of successful authentication results received" CounterInstanceName="" CounterType="Simple"/>
+
+      <Metric MetricType="ServiceStatus" ServiceName="ActiveMQ" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE RTI Connect" />
+
+    </MetricTable>
+	</MetricTables>
+</Module>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="ComplianceAssurance" OID="1.3.6.1.4.1.3167.4.1.37" StatusOID="1.3.6.1.4.1.3167.4.1.37.1">
+	<MetricTables>
+		<MetricTable TableOid="1.3.6.1.4.1.3167.4.1.37.2" TableName="ComplianceAssurance service status">
+			<Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="1.4.5"/>
+			<Metric MetricType="ServiceStatus" ServiceName="NICE Compliance Assurance" />
+		</MetricTable>
+	</MetricTables>
+</Module>

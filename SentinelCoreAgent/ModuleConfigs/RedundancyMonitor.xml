@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="RedundancyMonitor" OID="1.3.6.1.4.1.3167.4.1.27" StatusOID="1.3.6.1.4.1.3167.4.1.27.1" >
+  <MetricTables>
+    <MetricTable TableOid="1.3.6.1.4.1.3167.4.1.27.2" TableName="Redundancy Monitor Data">
+      <Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Keep Alive Service" />
+    </MetricTable>
+  </MetricTables>
+</Module>

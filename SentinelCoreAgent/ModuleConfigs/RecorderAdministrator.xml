@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Module Name="RecorderAdministrator" OID="1.3.6.1.4.1.3167.4.1.5" StatusOID="1.3.6.1.4.1.3167.4.1.5.1" >
+  <MetricTables>
+    <MetricTable TableOid="1.3.6.1.4.1.3167.4.1.5.2" TableName="AIR perf counters">
+      <Metric MetricType="Default" DefaultName="ConfigVersion" DefaultValue="v1_0"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="PacketSniffer.AvgNumOfLostPacketsMPRBuffer" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="PacketSniffer.PercentOfMemoryUsageMemMgr" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="RTPLogic.NumberOfPacketsDuplicated" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="NetCap.PercentOfAudioMemoryUsageMemMgr" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="NetCap.NumberOfActiveStreams" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="RT.NumOfOpenMonitorRequests" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="RT.AverageMonitorRequestsPerSecond" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.IPCapture" CounterName="RT.AverageFailedMonitorRequestsPerSecond" CounterInstanceName="ipcap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.ScreenCapture" CounterName="PacketCollector.NumOfDataReceiveFailures" CounterInstanceName="ScreenCap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.ScreenCapture" CounterName="PacketFactory.PercentOfBundlesMemMgrUsage" CounterInstanceName="ScreenCap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.ScreenCapture" CounterName="PacketFactory.PercentOfBlocksMemMgrUsage" CounterInstanceName="ScreenCap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.ScreenCapture" CounterName="Packager.PercentOfBuffersMemMgrUsage" CounterInstanceName="ScreenCap instance" CounterType="Simple"/>
+      <Metric MetricType="PerfCounter" CategoryName="Nice Systems.ScreenCapture" CounterName="ScreenCapManagement.NumberOfStreams" CounterInstanceName="ScreenCap instance" CounterType="Simple"/>
+      
+      <Metric MetricType="PerfCounter" CategoryName="NICE Recorder: Text Recorder Counters" CounterName="Messages Sent Per Second" CounterInstanceName="_total" CounterType="Average" CollectingInterval="300" Delta="20"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Recorder: Text Recorder Counters" CounterName="Filtered Messages Per Day" CounterInstanceName="_total" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Recorder: Text Recorder Counters" CounterName="Maximum Number Of Messages Per Hour" CounterInstanceName="_total" CounterType="Simple"/>
+			<Metric MetricType="PerfCounter" CategoryName="NICE Recorder: Text Recorder Counters" CounterName="Hours Passed Since Last Message" CounterInstanceName="_total" CounterType="Simple"/>
+
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Keep Alive Service" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Recorder Administrator" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Text Capture" />
+      <Metric MetricType="ServiceStatus" ServiceName="NICE Real Time Voice Buffering" />
+    </MetricTable>
+  </MetricTables>
+</Module>
