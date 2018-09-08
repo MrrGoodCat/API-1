@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfModule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Module Version="1.1.2" ModuleName="PhysicalDb">
+    <Services>
+      <Service ServiceName="SQL Server \(.*\)" Status="Stopped" />
+    </Services>
+    <Metrics>
+      <Metric MetricName="Page data" MetricType="Default" />
+    </Metrics>
+    <PerformanceCounters>
+      <PerfCounter CounterName="Avg. Disk sec/Transfer" CounterCategoryName="PhysicalDisk" CounterInstanceName="_Total" CounterType="Average" />
+    </PerformanceCounters>
+  </Module>
+  <Module Version="1.1.2" ModuleName="CLSServer">
+    <PerformanceCounters>
+      <PerfCounter CounterCategoryName="NICE Interactions Center: TRS" CounterName="# of Inserted Calls" CounterInstanceName="" CounterType="Simple" />
+      <PerfCounter CounterCategoryName="NICE Interactions Center: DBServer" CounterName="Insert Interaction Received / sec" CounterInstanceName="" CounterType="Average"/>
+      <PerfCounter CounterCategoryName="NICE Interactions Center: CallServer" CounterName="# of pending commands" CounterInstanceName="" CounterType="Simple" />
+      <PerfCounter CounterCategoryName="NICE Interactions Center: DBServer" CounterName="Avg. Request BackLog Time (ms)" CounterInstanceName="" CounterType="Average"/>
+      <PerfCounter CounterCategoryName="NICE Interactions Center: CallServer" CounterName="StartCall Commands Handling/sec" CounterInstanceName="" CounterType="Average"/>
+      <PerfCounter CounterCategoryName="NICE Interactions Center: RCMResourceUtilization" CounterName="ResourceUtilization_Counters" CounterInstanceName="resourceutilization_profile_id_*" CounterType="Simple"/>
+    </PerformanceCounters>
+  </Module>
+</ArrayOfModule>

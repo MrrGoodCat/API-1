@@ -10,5 +10,8 @@ namespace Module
 
         [Description("_Total")]
         Total,
+
+        [Description("Simple")]
+        Simple
     }
 }

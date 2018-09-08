@@ -299,6 +299,10 @@
       <Project>{b08ac216-e5fa-48f2-97f6-61654e57998d}</Project>
       <Name>PerformanceCountersCollector</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SentinelAPICore\SentinelAPICore.csproj">
+      <Project>{4ffa0c04-d6cb-40b1-afc8-bb3167b97d5d}</Project>
+      <Name>SentinelAPICore</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
