@@ -16,7 +16,7 @@ namespace SentinelAPICore
         List<Service> services;
         List<Metric> metrics;
         List<PerfCounter> perfCounters;
-        string configFile = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);//.GetExecutingAssembly().Location);
+        
 
         public XmlSerializator()
         {
@@ -66,18 +66,20 @@ namespace SentinelAPICore
         }
 
         public void Deserialize(List<Module.Module> modules)
+        {
+            string configFile = @"D:\inetpub\SentinelAPIAgent";
+
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Module.Module>));
+
+            using (FileStream fs = new FileStream(configFile += @"\ModulesConfig.xml", FileMode.OpenOrCreate))
             {
-                XmlSerializer formatter = new XmlSerializer(typeof(List<Module.Module>));
+                List<Module.Module> modulesCollection = (List<Module.Module>)formatter.Deserialize(fs);
 
-                using (FileStream fs = new FileStream(configFile += @"\ModulesConfig.xml", FileMode.OpenOrCreate))
+                foreach (Module.Module module in modulesCollection)
                 {
-                    List<Module.Module> modulesCollection = (List<Module.Module>)formatter.Deserialize(fs);
-
-                    foreach (Module.Module module in modulesCollection)
-                    {
-                        modules.Add(module);
-                    }
+                    modules.Add(module);
                 }
             }
+        }
     }
 }
