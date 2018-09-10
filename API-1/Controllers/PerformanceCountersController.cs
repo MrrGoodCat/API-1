@@ -15,8 +15,6 @@ namespace API_1.Controllers
 {
     public class PerformanceCountersController : ApiController
     {
-        PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-        IPerformanceCounterCategoryWrapper performanceCounterCategoryWrapper = new PerformanceCounterCategoryWrapper();
         SentinelAPICoreSingletone SentinelAPICore = SentinelAPICoreSingletone.Instance;
 
         [Route("api/CPU")]
@@ -25,10 +23,27 @@ namespace API_1.Controllers
             Logger.InitLogger();
             ILog log = Logger.Log;
             SentinelAPICore.Deserialize();
-            var result = performanceCounterCategoryWrapper.GetCpuUsage();
-            if (result == null)
+            object result;
+            try
             {
-                return NotFound();
+                //Get CPU usage values using a WMI query
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_PerfFormattedData_PerfOS_Processor");
+                var cpuTimes = searcher.Get().Cast<ManagementObject>().Select(mo => new
+                {
+                    Name = mo["Name"],
+                    Usage = mo["PercentProcessorTime"]
+                }
+                )
+                .ToList();
+
+                //The '_Total' value represents the average usage across all cores,
+                //and is the best representation of overall CPU usage
+                var query = cpuTimes.Where(x => x.Name.ToString() == "_Total").Select(x => x.Usage);
+                result = query.SingleOrDefault();
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.NotFound, e.ToString());
             }
             return Ok(result + " " + SentinelAPICore.Modules.Last().PerformanceCounters.First().CounterName);
         }
@@ -47,19 +62,33 @@ namespace API_1.Controllers
         [Route("api/LogicalDisk/{label}")]
         public IHttpActionResult GetDisksUtilization(string label)
         {
+            float result;
             PerformanceCounter performanceCounter = new PerformanceCounter("LogicalDisk", "% Free Space", label + ":");
-            return Ok(100 - performanceCounter.NextValue());
+            try
+            {
+                result = performanceCounter.NextValue();
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.NotFound, $"Disk {label} is not found on the system /n" + e.ToString());
+            }
+            return Ok(100 - result);
         }
 
         [Route("api/PerfCounters/{counterCategory}/{counterName}/{counterInstance}")]
-        public IHttpActionResult GetPerformaneCounter(string counterName, string counterCategory, string counterInstance)
+        public IHttpActionResult GetPerformaneCounter([FromUri] string counterName, string counterCategory, string counterInstance)
         {
             PerformanceCounter performanceCounter = new PerformanceCounter(counterCategory, counterName, counterInstance);
-            if (performanceCounter == null)
+            float result;
+            try
             {
-                return NotFound();
+                result = performanceCounter.NextValue();
             }
-            return Ok(performanceCounter.NextValue());
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.NotFound,  e.ToString());
+            }
+            return Ok(result);
         }
     }
 

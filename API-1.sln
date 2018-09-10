@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module", "Module\Module.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentinelAPICore", "SentinelAPICore\SentinelAPICore.csproj", "{4FFA0C04-D6CB-40B1-AFC8-BB3167B97D5D}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SentinelAPIAgent", "SentinelAPIAgent\SentinelAPIAgent.wixproj", "{DD1E8F4E-D081-4847-950C-4D92820A08FA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,12 +71,6 @@ Global
 		{4FFA0C04-D6CB-40B1-AFC8-BB3167B97D5D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FFA0C04-D6CB-40B1-AFC8-BB3167B97D5D}.Release|x86.ActiveCfg = Release|Any CPU
 		{4FFA0C04-D6CB-40B1-AFC8-BB3167B97D5D}.Release|x86.Build.0 = Release|Any CPU
-		{DD1E8F4E-D081-4847-950C-4D92820A08FA}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{DD1E8F4E-D081-4847-950C-4D92820A08FA}.Debug|x86.ActiveCfg = Debug|x86
-		{DD1E8F4E-D081-4847-950C-4D92820A08FA}.Debug|x86.Build.0 = Debug|x86
-		{DD1E8F4E-D081-4847-950C-4D92820A08FA}.Release|Any CPU.ActiveCfg = Release|x86
-		{DD1E8F4E-D081-4847-950C-4D92820A08FA}.Release|x86.ActiveCfg = Release|x86
-		{DD1E8F4E-D081-4847-950C-4D92820A08FA}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

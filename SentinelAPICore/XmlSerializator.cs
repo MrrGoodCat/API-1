@@ -67,7 +67,7 @@ namespace SentinelAPICore
 
         public void Deserialize(List<Module.Module> modules)
         {
-            string configFile = @"D:\inetpub\SentinelAPIAgent";
+            string configFile = @"C:\inetpub\SentinelAPIAgent\bin";
 
             XmlSerializer formatter = new XmlSerializer(typeof(List<Module.Module>));
 
