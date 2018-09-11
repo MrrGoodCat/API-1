@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -36,6 +37,15 @@ namespace Module
             Services = services;
             Metrics = metrics;
             PerformanceCounters = perfCounters;
+        }
+
+        public ServiceStatus? GetServiceStatus(string serviceName)
+        {
+            if (Services != null)
+            {
+                return Services.FirstOrDefault(s => s.ServiceName == serviceName).Status;
+            }
+            return null;
         }
     }
 }

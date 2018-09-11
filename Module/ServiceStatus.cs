@@ -9,6 +9,10 @@ namespace Module
     public enum ServiceStatus
     {
         Stopped,
-        Running
+        Running,
+        Paused,
+        Stopping,
+        Starting,
+        Unknown
     }
 }

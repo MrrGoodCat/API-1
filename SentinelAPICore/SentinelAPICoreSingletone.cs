@@ -27,6 +27,14 @@ namespace SentinelAPICore
             xml.Deserialize(Modules);
         }
 
+        public ServiceStatus GetServiceStatus(string moduleName, string serviceName)
+        {
+            var module = Modules.FirstOrDefault(m => m.ModuleName == moduleName);
+            var setvice = module.Services.FirstOrDefault(s => s.ServiceName == serviceName);
+
+            return setvice.Status;
+        }
+
 
         private class Nested
         {
