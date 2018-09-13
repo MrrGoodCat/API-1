@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.ServiceProcess;
 using System.Web.Http;
 using SentinelAPICore;
 
@@ -12,11 +13,10 @@ namespace API_1.Controllers
     {
         SentinelAPICoreSingletone SentinelAPICore = SentinelAPICoreSingletone.Instance;
 
-        [Route ("api/services/{moduleName}/{serviceName}")]
-        public IHttpActionResult GetServiceStatus(string moduleName, string serviceName)
+        [Route ("api/services/{serviceName}")]
+        public IHttpActionResult GetServiceStatus(string serviceName)
         {
-            
-            return Ok(SentinelAPICore.GetServiceStatus(moduleName, serviceName).ToString());
+            return Ok(SentinelAPICore.GetServiceStatus(serviceName));
         }
     }
 }

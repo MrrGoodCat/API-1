@@ -61,8 +61,6 @@ namespace SentinelAPICore
             {
                 formatter.Serialize(fs, modules);
             }
-
-
         }
 
         public void Deserialize(List<Module.Module> modules)

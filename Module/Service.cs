@@ -48,5 +48,24 @@ namespace Module
                     return ServiceStatus.Unknown;
             }
         }
+
+        private void DoesServiceExist(string serviceName)
+        {
+            bool isExist = ServiceController.GetServices().Any(serviceController => serviceController.ServiceName.Equals(serviceName));
+
+            if (isExist)
+            {
+                ServiceName = serviceName;
+                Status = GetServiceStatus();
+                //return true;
+            }
+            else
+            {
+                ServiceName = null;
+                Status = ServiceStatus.Unknown;
+                //return false;
+            }
+             
+        }
     }
 }

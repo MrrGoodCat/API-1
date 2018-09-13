@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using Module;
@@ -27,14 +28,48 @@ namespace SentinelAPICore
             xml.Deserialize(Modules);
         }
 
-        public ServiceStatus GetServiceStatus(string moduleName, string serviceName)
+        public string GetServiceStatus(string serviceName)
         {
-            var module = Modules.FirstOrDefault(m => m.ModuleName == moduleName);
-            var setvice = module.Services.FirstOrDefault(s => s.ServiceName == serviceName);
-
-            return setvice.Status;
+            if (DoesServiceExist(serviceName))
+            {
+                ServiceController sc = new ServiceController(serviceName);
+                switch (sc.Status)
+                {
+                    case ServiceControllerStatus.Running:
+                        return "Running";
+                    case ServiceControllerStatus.Stopped:
+                        return "Stopped";
+                    case ServiceControllerStatus.Paused:
+                        return "Paused";
+                    case ServiceControllerStatus.StopPending:
+                        return "Stopping";
+                    case ServiceControllerStatus.StartPending:
+                        return "Starting";
+                    default:
+                        return "Status Changing";
+                }
+            }
+            else
+            {
+                return $"Servise {serviceName} is not exist on the system";
+            }
+            
         }
 
+        private bool DoesServiceExist(string serviceName)
+        {
+            bool isExist = ServiceController.GetServices().Any(serviceController => serviceController.ServiceName.Equals(serviceName));
+
+            if (isExist)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
         private class Nested
         {
