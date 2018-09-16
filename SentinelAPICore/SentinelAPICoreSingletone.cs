@@ -71,6 +71,25 @@ namespace SentinelAPICore
 
         }
 
+        public string[] BaseSixFourDecode(string encodedString)
+        {
+            try
+            {
+                byte[] data = Convert.FromBase64String(encodedString);
+                string result = Encoding.UTF8.GetString(data);
+
+                string[] headers = result.Split('/');
+
+                return headers;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+            
+        }
+
         private class Nested
         {
             /// <summary>

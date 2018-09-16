@@ -55,6 +55,7 @@ namespace API_1.Controllers
 
             performanceCounterRAM.CounterName = "% Committed Bytes In Use";
             performanceCounterRAM.CategoryName = "Memory";
+            performanceCounterRAM.InstanceName = null;
 
             return Ok(performanceCounterRAM.NextValue());
         }
@@ -75,10 +76,40 @@ namespace API_1.Controllers
             return Ok(100 - result);
         }
 
-        [Route("api/PerfCounters/{counterCategory}/{counterName}/{counterInstance}")]
-        public IHttpActionResult GetPerformaneCounter([FromUri] string counterName, string counterCategory, string counterInstance)
+        [Route("api/PerfCounters/{counterInformation}")]
+        public IHttpActionResult GetPerformaneCounter([FromUri] string counterInformation)
         {
-            PerformanceCounter performanceCounter = new PerformanceCounter(counterCategory, counterName, counterInstance);
+            PerformanceCounter performanceCounter = new PerformanceCounter();
+            string[] tempCounterInfo = SentinelAPICore.BaseSixFourDecode(counterInformation);
+
+            string counterCategory; // = tempCounterInfo[0];
+            string counterName; // = tempCounterInfo[1];
+            string counterInstance; // = tempCounterInfo[2];
+
+            if (tempCounterInfo != null)
+            {
+                switch (tempCounterInfo.Length)
+                {
+                    case 3:
+                        performanceCounter.CategoryName = tempCounterInfo[0];
+                        performanceCounter.CounterName = tempCounterInfo[1];
+                        performanceCounter.InstanceName = tempCounterInfo[2];
+                        break;
+                    case 2:
+                        performanceCounter.CategoryName = tempCounterInfo[0];
+                        performanceCounter.CounterName = tempCounterInfo[1];
+                        //performanceCounter.InstanceName = "";
+                        break;
+                    case 1:
+                        performanceCounter.CategoryName = tempCounterInfo[0];
+                        //performanceCounter.CounterName = "";
+                        //performanceCounter.InstanceName = "";
+                        break;
+                    default:
+                        performanceCounter = null;
+                        break;
+                }
+            }
             float result;
             try
             {
@@ -86,7 +117,7 @@ namespace API_1.Controllers
             }
             catch (Exception e)
             {
-                return Content(HttpStatusCode.NotFound,  e.ToString());
+                return Content(HttpStatusCode.NotFound,  $"{performanceCounter.CategoryName} - {performanceCounter.CounterName} - {performanceCounter.InstanceName} " + e.ToString());
             }
             return Ok(result);
         }
