@@ -81,11 +81,6 @@ namespace API_1.Controllers
         {
             PerformanceCounter performanceCounter = new PerformanceCounter();
             string[] tempCounterInfo = SentinelAPICore.BaseSixFourDecode(counterInformation);
-
-            string counterCategory; // = tempCounterInfo[0];
-            string counterName; // = tempCounterInfo[1];
-            string counterInstance; // = tempCounterInfo[2];
-
             if (tempCounterInfo != null)
             {
                 switch (tempCounterInfo.Length)
@@ -98,12 +93,12 @@ namespace API_1.Controllers
                     case 2:
                         performanceCounter.CategoryName = tempCounterInfo[0];
                         performanceCounter.CounterName = tempCounterInfo[1];
-                        //performanceCounter.InstanceName = "";
+                        performanceCounter.InstanceName = null;
                         break;
                     case 1:
                         performanceCounter.CategoryName = tempCounterInfo[0];
-                        //performanceCounter.CounterName = "";
-                        //performanceCounter.InstanceName = "";
+                        performanceCounter.CounterName = null;
+                        performanceCounter.InstanceName = null;
                         break;
                     default:
                         performanceCounter = null;
@@ -117,7 +112,7 @@ namespace API_1.Controllers
             }
             catch (Exception e)
             {
-                return Content(HttpStatusCode.NotFound,  $"{performanceCounter.CategoryName} - {performanceCounter.CounterName} - {performanceCounter.InstanceName} " + e.ToString());
+                return Content(HttpStatusCode.NotFound,  $"Category '{performanceCounter.CategoryName}' - Counter '{performanceCounter.CounterName}' - Instance '{performanceCounter.InstanceName}' " + e.ToString());
             }
             return Ok(result);
         }
