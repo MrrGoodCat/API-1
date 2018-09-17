@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AgentsCenter.Information.Defs">
+      <HintPath>.\AgentsCenter.Information.Defs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
@@ -41,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MetricsCollector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SentinelAPICoreSingletone.cs" />
     <Compile Include="XmlSerializator.cs" />
